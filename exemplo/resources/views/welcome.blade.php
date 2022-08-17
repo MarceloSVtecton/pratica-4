@@ -19,9 +19,82 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+        <style>
+            body {
+    background-color: rgb(176, 210, 240);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5em;
+}
+header {
+    text-align: center;
+}
+h1 {
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.295);
+}
+section {
+    background-color: white;
+    color: black;
+    font-size: 1em;
+    height: 400px;
+    width: 500px;
+    padding: 5px;
+    margin: auto;
+    border-radius: 3px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.295);
+}
+footer {
+    color: white;
+    text-align: center;
+    text-decoration: wavy;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.295);
+}
+
+        </style>
     </head>
     <body class="antialiased">
        
-               <h1>HELLO WORLD</h1>
+    <header>
+        <h1>GERADOR DE TABUADA</h1>
+    </header>
+    <section>
+        <div>
+            <p>Digite valor: <input type="number" name="valor" id="mult"> <input type="button" value="GERAR TABUADA" onclick="gerar()"> </p>
+            
+        </div>
+        <div>
+            <select name="tab" id="mostrar" size="10">
+                <option>Digite um valor acima</option>
+            </select>
+
+
+        </div>
+        
+    </section>
+    <footer>
+        <p>TECTON</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        function gerar() {
+    let num = document.getElementById('mult')
+    let tab = document.getElementById('mostrar')
+    if ( num.value.length == 0) {
+        alert ('Por favor digite um número')
+    } else {
+        let n = Number(num.value)
+        tab.innerHTML = ''
+        for (let c=1 ; c<=10 ; c++) {
+            let item = document.createElement('option')
+            item.text = `${n} * ${c} = ${n*c}`
+            tab.appendChild(item)
+
+
+        }
+    }
+
+}
+
+    </script>
     </body>
 </html>
